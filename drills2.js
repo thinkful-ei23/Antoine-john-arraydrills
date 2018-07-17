@@ -61,7 +61,26 @@ const blizzard = hazardWarningCreator('it might be cold')
 
 const turtleMove = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 let numMoves = [];
+
 turtleMove
     .filter(num => num[0] >= 0 && num[1] >= 0)
     .map(num =>  num[0] + num[1])
     .forEach(num => console.log(num));
+
+
+    let input = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+// Decoder
+const decoder = string => {
+  let words = string.split(' ');
+  let accumulator = '';
+  words.forEach(word => {
+    if(word.length === 3) {
+      accumulator += ' '; 
+    } else if(words.lastIndexOf(words.length - 1)){
+      accumulator += word.charAt(word.length - 1).toUpperCase();
+    }
+  })
+  return accumulator;
+}
+
+console.log(decoder(input));
