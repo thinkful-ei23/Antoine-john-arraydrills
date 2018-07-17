@@ -30,11 +30,38 @@ console.log(filteredNames) // => ['Rich', 'Ray']
 
 // TASK: DEFINE YOUR FILTER FUNCTION BELOW:
 function filter(arr, fn) {
-    let newArray = [];
-    for(let i=0; i < arr.length; i++) {
-        if(fn(arr[i]) === true) {
-            newArray.push(arr[i]);
-        }
-    }
-    return newArray;
+
+   const newArray = []
+   for(let i = 0; i < arr.length; i++){
+       if(fn(arr[i]) === true){
+           newArray.push(arr[i])
+       }
+   }
+   return newArray
 }
+
+
+function hazardWarningCreator(typeOfWarning){
+    let warningCounter = 0;
+   return function(location){
+        warningCounter++
+        console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`)
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`)
+    }
+}
+
+const rockWarning = hazardWarningCreator('Rocks on the road!');
+const hurricane = hazardWarningCreator('I would not be outside right now')
+const blizzard = hazardWarningCreator('it might be cold')
+
+// rockWarning('Montana')
+// hurricane('FLorida')
+// hurricane('Alabama')
+// blizzard('California')
+
+const turtleMove = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+let numMoves = [];
+turtleMove
+    .filter(num => num[0] >= 0 && num[1] >= 0)
+    .map(num =>  num[0] + num[1])
+    .forEach(num => console.log(num));
