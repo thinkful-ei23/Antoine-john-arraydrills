@@ -23,8 +23,19 @@ function min(numbers){
          console.log(minNum)
 }
 
-const array = [1,2,3,4,5,6]
+const array = [1,2,3,4,5,6,7,7]
 
-max(array)
+// max(array)
 
-min(array)
+// min(array)
+
+
+const average = function(numbers) {
+    let result = 0;
+    numbers.forEach(number => {
+        result += number;
+    })
+    return result  / numbers.length;
+}
+
+console.log(average(array));
