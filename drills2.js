@@ -65,3 +65,4 @@ turtleMove
     .filter(num => num[0] >= 0 && num[1] >= 0)
     .map(num =>  num[0] + num[1])
     .forEach(num => console.log(num));
+
